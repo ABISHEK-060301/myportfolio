@@ -1,0 +1,527 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* filter: drop-shadow(0 0 2em #61dafbaa); */
+
+body {
+  margin: 0 auto;
+  background-color: #01181b;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hr-medium {
+  display: inline-flex;
+  width: 24.5em;
+  border-bottom-color: #758398;
+}
+
+.hr-small {
+  display: inline-flex;
+  width: 2.5em;
+  border-bottom-color: #758398;
+}
+
+/* Fade In effect */
+
+.fade-in:hover {
+  transform: scale(0.95);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fade-in-content {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 1;
+    filter: blur(8px);
+  }
+
+  25% {
+    opacity: 1;
+    filter: blur(6px);
+  }
+
+  50% {
+    opacity: 1;
+    filter: blur(4px);
+  }
+
+  75% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Abishek Text backdrop effect */
+@keyframes lights {
+  0% {
+    color: #535353;
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+  30% {
+    color: #858585;
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  40% {
+    color: #acacac;
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+
+  70% {
+    color: #ababab;
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+
+  100% {
+    color: #535353;
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+
+}
+
+.text-effect-one {
+  margin: auto;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+}
+
+/* Shine */
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 180px;
+  }
+
+  100% {
+    background-position: 280px;
+  }
+}
+
+@keyframes shine-rev {
+  0% {
+    background-position: 380px;
+  }
+
+  60% {
+    background-position: 200px;
+  }
+
+  100% {
+    background-position: 0px;
+  }
+}
+
+.text-shine {
+  color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.shine-animation-forward {
+  animation: shine 5s infinite linear;
+}
+
+.shine-animation-backward {
+  animation: shine-rev 5s infinite linear;
+}
+
+/* Round Neon */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.box {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 40%, yellow),
+    linear-gradient(#262626, #141414);
+  animation: rotate 1.5s linear infinite;
+}
+
+.box:before,
+.box:after {
+  content: " ";
+  position: absolute;
+  inset: -0.1px;
+  background: linear-gradient(#161616, #262626);
+  border-radius: inherit;
+}
+
+.box:before {
+  background: linear-gradient(45deg, transparent, transparent 40%, yellow);
+  filter: blur(32px);
+}
+
+/* Neon */
+.button,
+.button i {
+  position: relative;
+  border-radius: 50%;
+
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  width: 25dvw;
+  height: 45dvh;
+  line-height: 46px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  /* background-color: #050505 !important; */
+}
+
+.button div {
+  text-align: center;
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all .25s;
+  -moz-transition: all .25s;
+  -ms-transition: all .25s;
+  -o-transition: all .25s;
+  transition: all .25s;
+}
+
+.button:hover div:first-child,
+.button div:last-child {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.button:hover div:last-child {
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.gradient-border {
+  width: 465px;
+  height: 465px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: 0.5s all linear;
+}
+
+.gradient-border:after {
+  content: url('./assets/abi.png');
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: 50%;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Neon Two */
+.boxs {
+  width: 465px;
+  height: 465px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  transition: 0.5s all linear;
+}
+
+.boxs::before {
+  z-index: -1;
+}
+
+.boxs::after {
+  z-index: -2;
+  filter: blur(10px);
+}
+
+.boxs::before,
+.boxs::after {
+  content: " ";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(0deg, #2196f3, #060c21, #F00000);
+  border-radius: 50%;
+}
+
+.photo {
+  border-radius: 50%;
+}
+
+/* Neon Three */
+.content,
+.content i {
+  position: relative
+}
+
+.content {
+  display: inline-block;
+  cursor: pointer;
+  outline: 0;
+  white-space: nowrap;
+  padding: 50px 50px;
+  font-size: 16px;
+  min-height: 74px;
+  line-height: 46px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  border: none;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: #000000 !important;
+}
+
+.gradient-border-one {
+  background: #1D1F20;
+  position: relative;
+  border-radius: 0;
+}
+
+.gradient-border-one:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * 3px);
+  left: calc(-1 * 3px);
+  height: calc(100% + 3px * 2);
+  width: calc(100% + 3px * 2);
+  background: linear-gradient(0deg, #2196f3, #060c21, #F00000);
+  border-radius: 3px;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*Big Roundness */
+.roundness {
+  z-index: -1;
+  width: 465px;
+  height: 465px;
+  display: flex;
+  filter: blur(8px);
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  transition: 0.5s all linear;
+}
+
+.roundness::before {
+  content: " ";
+  top: -600px;
+  /* rotate: -60deg; */
+  left: 200px;
+  right: -200px;
+  bottom: 600px;
+  border-radius: 50%;
+  position: absolute;
+  background: linear-gradient(-60deg, #2196f3, #060c21, #F00000);
+}
+
+/* Float animation */
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* backdrop running effect */
+/* For full stack developer */
+
+.shadow-body::before,
+.shadow-body::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.shadow-body:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  height: 100%;
+}
+
+.shadow-running {
+  display: inline-block;
+  color: white;
+  font-family: 'Righteous', serif;
+  font-size: 12em;
+  text-shadow: .03em .03em 0 hsla(230, 40%, 50%, 1);
+}
+
+.shadow-running:after {
+  content: " ";
+  position: absolute;
+  top: .06em;
+  left: .06em;
+  z-index: -1;
+  background-image:
+    linear-gradient(45deg,
+      transparent 45%,
+      hsla(48, 20%, 90%, 1) 45%,
+      hsla(48, 20%, 90%, 1) 55%,
+      transparent 0);
+  background-size: .05em .05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shad-anim 15s linear infinite;
+}
+
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0
+  }
+
+  0% {
+    background-position: 100% -100%
+  }
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 1px auto -webkit-focus-ring-color;
+}

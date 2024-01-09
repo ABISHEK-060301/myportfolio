@@ -1,5 +1,9 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-cursor: 220, 90, 90;
+  --cursor-outline-shade: 0.3;
+  --cursor-size: 10px;
+  --cursor-outline-size: 12px;
 }
 
 /* filter: drop-shadow(0 0 2em #61dafbaa); */
@@ -15,6 +19,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2px #4d76ba);
+  transition: all 0.5s ease-in-out;
+  border-radius: 15px;
 }
 
 button {

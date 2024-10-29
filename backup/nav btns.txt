@@ -1,0 +1,84 @@
+{/* <Button
+                            sx={{
+                              fontFamily: "Barlow Semi Condensed",
+                              color: "white",
+                              fontSize: "20px",
+                              ...btnCss,
+                            }}
+                            onClick={() => {
+                              gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: "#home", offsetY: 70 },
+                              });
+                            }}
+                          >
+                            HOME
+                          </Button>
+
+                          <Button
+                            sx={{
+                              fontFamily: "Barlow Semi Condensed",
+                              color: "white",
+                              fontSize: "20px",
+                              ...btnCss,
+                            }}
+                            onClick={() => {
+                              gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: "#about", offsetY: 70 },
+                              });
+                            }}
+                          >
+                            ABOUT
+                          </Button>
+
+                          <Button
+                            sx={{
+                              fontFamily: "Barlow Semi Condensed",
+                              color: "white",
+                              fontSize: "20px",
+                              ...btnCss,
+                            }}
+                            onClick={() => {
+                              gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: "#experience", offsetY: 70 },
+                              });
+                            }}
+                          >
+                            EXPERIENCE
+                          </Button>
+
+                          <Button
+                            sx={{
+                              fontFamily: "Barlow Semi Condensed",
+                              color: "white",
+                              fontSize: "20px",
+                              ...btnCss,
+                            }}
+                            onClick={() => {
+                              gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: "#stacks", offsetY: 70 },
+                              });
+                            }}
+                          >
+                            STACKS
+                          </Button>
+
+                          <Button
+                            sx={{
+                              fontFamily: "Barlow Semi Condensed",
+                              color: "white",
+                              fontSize: "20px",
+                              ...btnCss,
+                            }}
+                            onClick={() => {
+                              gsap.to(window, {
+                                duration: 1,
+                                scrollTo: { y: "#contact", offsetY: 70 },
+                              });
+                            }}
+                          >
+                            CONTACT
+                          </Button> */}

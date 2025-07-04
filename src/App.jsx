@@ -10,6 +10,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
+import Dock from "./Dock";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
@@ -28,6 +29,9 @@ import { MdCall } from "react-icons/md";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import abi from "../src/assets/abi-image-1.jpg";
 import logo from "../src/assets/AJgif.gif";
+import Particles from "./jsrepo/Backgrounds/Particles/Particles";
+import AnimatedBackground from "./component/canvasBg";
+import VariableProximity from "./jsrepo/TextAnimations/VariableProximity/VariableProximity";
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
@@ -185,55 +189,43 @@ function App() {
     {
       heading: "REACT",
       content: `
-      I simply started my carrier with React JS
-      library and I started to learn more about{" "}
-      API's and curious to learn Node JS.`,
+      Started my journey with React, got hooked on APIs 
+      — and that curiosity led me straight into Node.js.`,
     },
     {
       heading: "NODE",
       content: `
-      Yes I did it, I became a Full Stack Developer very soon 
-      than I expected by learning Node JS. Also learnt Express framework.`,
+      Didn’t expect it this fast — but learning Node.js and Express 
+      pushed me into full stack before I knew it!`,
     },
     {
       heading: "DATABASES",
-      content: `I am flexible with mySQL, Postgres and MongoDB. 
-      I also started my first project as a Full Stack Developer.`,
+      content: `Kicked off my full stack path with real projects, 
+      flexing across MySQL, Postgres, and MongoDB seamlessly.`,
     },
     {
       heading: "CSS FRAMEWORKS",
       content: `
-      I have learnt AntDesign, Material UI, Tailwind and Bootstrap CSS 
-      frameworks for my projects and also developed sample UI on each framework.`,
+      Dove into UI frameworks — built with AntD, MUI, Tailwind, Bootstrap, 
+      and shadcn to see what each one brings to the table.`,
     },
     {
       heading: "AWS",
-      content: `I also learnt about EC2 instance creation in Node JS using aws-sdk. 
-      I'm better strong in React JS with Amplify and GraphQL and deployment using GitHub.`,
+      content: `Dived into AWS with Node.js — spun up EC2 instances using aws-sdk, while sharpening
+       my React skills with Amplify, GraphQL, and GitHub-driven deployments.`,
     },
     {
       heading: "DEPLOYMENTS",
-      content: `I done deployment for my projects in VPS using apache server. 
-      Very well known about server configurations like reverse proxy using nginx.`,
+      content: `Handled deployments on VPS via Apache, with Nginx as 
+      reverse proxy — learned the server side inside out.`,
     },
   ];
-
-  // const list = document.querySelectorAll(".list");
-  // list.forEach((item) =>
-  //   item.addEventListener("click", function (e) {
-  //     list.forEach((li) => {
-  //       li.classList.remove("active");
-  //     });
-  //     e.currentTarget.classList.add("active");
-  //   })
-  // );
 
   const intersectionCallback = (entries) => {
     const { isIntersecting, target } = entries[0];
     if (isIntersecting) {
       setActive(target.id);
       localStorage.setItem("tab", target.id);
-      // console.log("target", target.id);
     }
   };
 
@@ -259,6 +251,7 @@ function App() {
     <Router>
       <div className="vibrant-colors">
         <div className="blurred-surface">
+          <AnimatedBackground />
           <Grid container>
             {/* Nav Bar */}
             <div id="home">
@@ -599,6 +592,7 @@ function App() {
                                       color={"#000000"}
                                       fontFamily={"Poppins, sans-serif"}
                                     >
+                                      {/* <VariableProximity /> */}
                                       ABOUT
                                     </Typography>
                                     <Typography
@@ -656,7 +650,7 @@ function App() {
                         justifyContent={"space-between"}
                         alignItems={"flex-start"}
                       >
-                        <Grid item sm={6} maxHeight={550}>
+                        <Grid item sm={5} maxHeight={550}>
                           <Grid container justifyContent={"end"}>
                             <Timeline position="right">
                               <TimelineItem>
@@ -693,9 +687,12 @@ function App() {
                                   >
                                     MitrahSoft Solutions pvt ltd.
                                   </Typography>
-                                  <Typography color="grey">
-                                    Company which gave me the first opportunity
-                                    to enrich myself in all stacks!
+                                  <Typography color="grey" fontSize={12}>
+                                    The place where it all began — the company
+                                    that trusted me first, sparking my journey
+                                    through every layer of the tech stack and
+                                    helping me discover my passion for
+                                    full-stack development.
                                   </Typography>
                                 </TimelineContent>
                               </TimelineItem>
@@ -734,7 +731,7 @@ function App() {
                                   >
                                     Still Coding here!
                                   </Typography>
-                                  <Typography color="grey">
+                                  <Typography color="grey" fontSize={12}>
                                     Because it&apos;s awesome!
                                   </Typography>
                                 </TimelineContent>
@@ -743,7 +740,7 @@ function App() {
                           </Grid>
                         </Grid>
 
-                        <Grid item sm={6} maxHeight={550}>
+                        <Grid item sm={5} maxHeight={550}>
                           <Box>
                             <div className="float gradient-border">
                               <div className="word-content">
@@ -996,7 +993,6 @@ function App() {
           </Row>
         </div>
       </div>
-
       {/* Cursor */}
     </Router>
   );

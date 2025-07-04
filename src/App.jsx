@@ -10,7 +10,6 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
-import Dock from "./Dock";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
@@ -29,9 +28,7 @@ import { MdCall } from "react-icons/md";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import abi from "../src/assets/abi-image-1.jpg";
 import logo from "../src/assets/AJgif.gif";
-import Particles from "./jsrepo/Backgrounds/Particles/Particles";
 import AnimatedBackground from "./component/canvasBg";
-import VariableProximity from "./jsrepo/TextAnimations/VariableProximity/VariableProximity";
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {

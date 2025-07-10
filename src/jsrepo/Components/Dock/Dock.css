@@ -7,10 +7,11 @@
   display: flex;
   max-width: 100%;
   align-items: center;
+  z-index: 100;
 }
 
 .dock-panel {
-  position: absolute;
+  position: fixed;
   bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -20,8 +21,14 @@
   gap: 1rem;
   border-radius: 1rem;
   background-color: #060010;
-  border: 1px solid #222;
   padding: 0 0.5rem 0.5rem;
+  border: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+}
+
+.dock-panel:hover {
+  /* background-color: #151515; */
+  transition: all 0.4s ease;
+  box-shadow: 0px 0px 30px 1px #2c2c2c;
 }
 
 .dock-item {
@@ -39,10 +46,16 @@
   outline: none;
 }
 
+.dock-item-active {
+  background-color: #2b2b2b;
+  /* transition: all 0.7s ease; */
+}
+
 .dock-icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .dock-label {

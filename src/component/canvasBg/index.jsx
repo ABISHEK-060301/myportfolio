@@ -86,8 +86,8 @@ const AnimatedBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
+        width: "100dvw",
+        height: "100dvh",
         opacity: 0.7,
         zIndex: -1,
       }}

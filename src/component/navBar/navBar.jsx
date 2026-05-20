@@ -1,8 +1,10 @@
 import { Row } from "antd";
 import { FaUser } from "react-icons/fa";
+import { HiBeaker } from "react-icons/hi";
+import { HiMiniSquare3Stack3D } from "react-icons/hi2";
 import { TbInfoSquareRounded } from "react-icons/tb";
 import Dock from "../../jsrepo/Components/Dock/Dock";
-import { ABOUT, HOME } from "../../utils";
+import { ABOUT, EXPERIENCE, HOME, STACKS } from "../../utils";
 
 const NavBar = ({ setActiveTab, activeTab }) => {
   const setActiveTabs = (tab) => {
@@ -23,18 +25,18 @@ const NavBar = ({ setActiveTab, activeTab }) => {
       tab: ABOUT,
       onClick: () => setActiveTabs(ABOUT),
     },
-    // {
-    //   icon: <HiBeaker size={20} color="#fff" />,
-    //   label: "Experience",
-    //   tab: EXPERIENCE,
-    //   onClick: () => setActiveTabs(EXPERIENCE),
-    // },
-    // {
-    //   icon: <HiMiniSquare3Stack3D size={18} color="#fff" />,
-    //   label: "Stacks",
-    //   tab: STACKS,
-    //   onClick: () => setActiveTabs(STACKS),
-    // },
+    {
+      icon: <HiBeaker size={20} color="#fff" />,
+      label: "Experience",
+      tab: EXPERIENCE,
+      onClick: () => setActiveTabs(EXPERIENCE),
+    },
+    {
+      icon: <HiMiniSquare3Stack3D size={18} color="#fff" />,
+      label: "Stacks",
+      tab: STACKS,
+      onClick: () => setActiveTabs(STACKS),
+    },
     // {
     //   icon: <IoCallSharp size={18} color="#fff" />,
     //   label: "Contact",

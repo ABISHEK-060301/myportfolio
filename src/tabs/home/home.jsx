@@ -12,7 +12,7 @@ const Home = () => {
     },
     {
       label: "Projects",
-      content: "3+",
+      content: "4+",
     },
   ];
 
@@ -111,7 +111,7 @@ const Home = () => {
                             ))}
                           </div>
                         </div>
-                        <div className="card__subtitle">
+                        <div className="card__subtitle bebas tracking-wider">
                           Associate Software Engineer
                         </div>
                         <div className="flex justify-between">

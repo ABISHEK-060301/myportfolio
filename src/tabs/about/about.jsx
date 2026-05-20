@@ -1,6 +1,8 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+/* eslint-disable react/no-unknown-property */
+import { Box, Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import DecryptedText from "../../jsrepo/TextAnimations/DecryptedText/DecryptedText";
+import { BlurRevealEffect } from "../../jsrepo/TextAnimations/blurRevealText/BlurRevealText";
+import { TextHoverEffect } from "../../jsrepo/TextAnimations/TextHoverEffect/TextHoverEffect";
 
 const About = ({ exp }) => {
   const [classNameState, setClassNameState] = useState("words");
@@ -40,7 +42,8 @@ const About = ({ exp }) => {
                   alignItems={"flex-start"}
                 >
                   <Grid item sm={6}>
-                    <div className="float gradient-border">
+                    <TextHoverEffect text={"About"} duration={1000} />
+                    {/* <div className="float gradient-border">
                       <div className="word-content" id="About">
                         <Typography
                           variant="h3"
@@ -66,13 +69,13 @@ const About = ({ exp }) => {
                         </Typography>
                       </div>
                     </div>
-                    <div className="roundness roundness-about"></div>
+                    <div className="roundness roundness-about"></div> */}
                   </Grid>
 
                   <Grid item sm={6} maxHeight={550}>
                     <Grid container justifyContent={"end"}>
                       <Box>
-                        <DecryptedText
+                        {/* <DecryptedText
                           text={about}
                           className="color-white font-mono text-2xl "
                           encryptedClassName="color-grey text-2xl font-mono"
@@ -80,11 +83,21 @@ const About = ({ exp }) => {
                           speed={30}
                           sequential
                           revealDirection="start"
+                        /> */}
+
+                        <BlurRevealEffect
+                          className={"text-neutral-500 instruction"}
+                          words={about}
                         />
                       </Box>
                     </Grid>
                   </Grid>
                 </Grid>
+                <div className="moon">
+                  <div className="crater cr1"></div>
+                  <div className="crater cr2"></div>
+                  <div className="crater cr3"></div>
+                </div>
               </Container>
             </Box>
           </div>

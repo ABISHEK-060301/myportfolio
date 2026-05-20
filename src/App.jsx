@@ -83,7 +83,11 @@ function App() {
               ) : activeTab === ABOUT ? (
                 <About exp={exp} />
               ) : activeTab === EXPERIENCE ? (
-                <Experience />
+                <Experience
+                  joinedYear={joinedYear}
+                  currentMonth={currentMonth}
+                  currentYear={currentYear}
+                />
               ) : activeTab === STACKS ? (
                 <Stacks />
               ) : activeTab === CONTACT ? (

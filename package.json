@@ -16,13 +16,20 @@
     "@mui/lab": "^5.0.0-alpha.159",
     "@mui/material": "^5.15.2",
     "@mui/styled-engine-sc": "^6.0.0-alpha.10",
+    "@tailwindcss/vite": "^4.1.11",
     "antd": "^5.21.6",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.20.1",
     "gsap": "^3.12.4",
+    "motion": "^12.23.12",
     "ogl": "^1.0.11",
+    "postprocessing": "^6.37.6",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.21.3",
-    "styled-components": "^6.1.6"
+    "styled-components": "^6.1.6",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "three": "^0.167.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

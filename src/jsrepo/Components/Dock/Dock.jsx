@@ -5,11 +5,11 @@
 "use client";
 
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useSpring,
   useTransform,
-  AnimatePresence,
 } from "framer-motion";
 import {
   Children,
@@ -109,6 +109,7 @@ function DockIcon({ children, className = "" }) {
 export default function Dock({
   items,
   className = "",
+  activeTab = "home",
   spring = { mass: 0.1, stiffness: 150, damping: 12 },
   magnification = 70,
   distance = 200,
@@ -149,7 +150,9 @@ export default function Dock({
           <DockItem
             key={index}
             onClick={item.onClick}
-            className={item.className}
+            className={`${item.className} ${
+              activeTab === item.tab ? "dock-item-active" : ""
+            }`}
             mouseX={mouseX}
             spring={spring}
             distance={distance}

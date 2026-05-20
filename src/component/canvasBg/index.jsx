@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const AnimatedBackground = () => {
   const canvasRef = useRef(null);
@@ -14,7 +14,7 @@ const AnimatedBackground = () => {
     canvas.width = maxx;
     canvas.height = maxy;
 
-    const dotCount = 500;
+    const dotCount = 100;
     const dots = [];
 
     // Dot class
@@ -86,8 +86,8 @@ const AnimatedBackground = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
+        width: "100dvw",
+        height: "100dvh",
         opacity: 0.7,
         zIndex: -1,
       }}

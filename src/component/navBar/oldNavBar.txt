@@ -1,0 +1,206 @@
+      {/* Nav Bar */}
+      <div id="home">
+        <Grid item sm={1} zIndex={1}>
+          <Box display="flex" flexDirection="row" sx={{ height: "440vh" }}>
+            <Box flexGrow={0}>
+              <AppBar
+                position="sticky"
+                elevation={0}
+                sx={{
+                  backgroundColor: "transparent",
+                  // backdropFilter: "blur(8px)",
+                  zIndex: 1100,
+                  top: 0,
+                }}
+              >
+                <Grid
+                  container
+                  justifyContent={"center"}
+                  alignContent={"center"}
+                >
+                  <Grid item sm={9}>
+                    <Grid
+                      display={"flex"}
+                      flexDirection={"column"}
+                      gap={25}
+                      container
+                      justifyContent={"space-between"}
+                      alignItems={""}
+                    >
+                      <Grid item sm={2}>
+                        <img
+                          className="pointer logo"
+                          style={{ margin: "20px 0" }}
+                          src={logo}
+                          width={"110vw"}
+                        />
+                      </Grid>
+
+                      <Grid item sm={4} spacing={10} padding={0}>
+                        <div className="navigation">
+                          <ul>
+                            <li
+                              className={`${
+                                active === "Home" ? "active" : ""
+                              } list`}
+                              style={{ "--clr": "#f44336" }}
+                            >
+                              <Button
+                                sx={{ ...btnCss }}
+                                name="Home"
+                                className="icon"
+                                onClick={(e) => {
+                                  changeActive(e.target.name);
+                                  gsap.to(window, {
+                                    duration: 2,
+                                    scrollTo: { y: "#home", offsetY: 70 },
+                                  });
+                                }}
+                              >
+                                <HouseIcon
+                                  fontSize="large"
+                                  name="home-outline"
+                                />
+                              </Button>
+                            </li>
+                            <li
+                              className={`${
+                                active === "About" ? "active" : ""
+                              } list`}
+                              style={{ "--clr": "#ffa117" }}
+                              onClick={(e) => {
+                                setActive(e.target.name);
+                              }}
+                            >
+                              <span>
+                                <Button
+                                  sx={{ ...btnCss }}
+                                  className="icon"
+                                  name="About"
+                                  onClick={(e) => {
+                                    changeActive(e.target.name);
+                                    gsap.to(window, {
+                                      duration: 2,
+                                      scrollTo: {
+                                        y: "#about",
+                                        offsetY: 70,
+                                      },
+                                    });
+                                  }}
+                                >
+                                  <InfoOutlinedIcon
+                                    fontSize="large"
+                                    name="person-outline"
+                                  />
+                                </Button>
+                              </span>
+                            </li>
+                            <li
+                              className={`${
+                                active === "Experience" ? "active" : ""
+                              } list`}
+                              style={{ "--clr": "#0fc70f" }}
+                              onClick={(e) => {
+                                setActive(e.target.name);
+                              }}
+                            >
+                              <span>
+                                <Button
+                                  sx={{ ...btnCss }}
+                                  name="Experience"
+                                  className="icon"
+                                  onClick={(e) => {
+                                    changeActive(e.target.name);
+                                    gsap.to(window, {
+                                      duration: 2,
+                                      scrollTo: {
+                                        y: "#experience",
+                                        offsetY: 70,
+                                      },
+                                    });
+                                  }}
+                                >
+                                  <ScienceOutlinedIcon
+                                    fontSize="large"
+                                    name="chatbubble-outline"
+                                  />
+                                </Button>
+                              </span>
+                            </li>
+                            <li
+                              className={`${
+                                active === "Stacks" ? "active" : ""
+                              } list`}
+                              style={{ "--clr": "#2196f3" }}
+                              onClick={(e) => {
+                                setActive(e.target.name);
+                              }}
+                            >
+                              <span>
+                                <Button
+                                  sx={{ ...btnCss }}
+                                  name="Stacks"
+                                  className="icon"
+                                  onClick={(e) => {
+                                    changeActive(e.target.name);
+                                    gsap.to(window, {
+                                      duration: 2,
+                                      scrollTo: {
+                                        y: "#stacks",
+                                        offsetY: 70,
+                                      },
+                                    });
+                                  }}
+                                >
+                                  <StackedBarChartOutlinedIcon
+                                    fontSize="large"
+                                    name="camera-outline"
+                                  />
+                                </Button>
+                              </span>
+                            </li>
+                            <li
+                              className={`${
+                                active === "Contact" ? "active" : ""
+                              } list`}
+                              style={{ "--clr": "#b145e9" }}
+                              onClick={(e) => {
+                                setActive(e.target.name);
+                              }}
+                            >
+                              <span>
+                                <Button
+                                  sx={{ ...btnCss }}
+                                  name="Contact"
+                                  className="icon"
+                                  onClick={(e) => {
+                                    changeActive(e.target.name);
+                                    gsap.to(window, {
+                                      duration: 2,
+                                      scrollTo: {
+                                        y: "#contact",
+                                        offsetY: 70,
+                                      },
+                                    });
+                                  }}
+                                >
+                                  <CallRoundedIcon
+                                    fontSize="large"
+                                    name="settings-outline"
+                                  />
+                                </Button>
+                              </span>
+                            </li>
+                            <div className="indicator"></div>
+                          </ul>
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </AppBar>
+            </Box>
+          </Box>
+        </Grid>
+      </div>
+      {/* Nav Bar End*/}

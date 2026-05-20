@@ -63,67 +63,6 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-/* --- Layout 01: Grid Cards --- */
-.project-grid {
-  display: grid;
-  grid-template-cols: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.grid-card {
-  position: relative;
-  background: rgba(15, 15, 15, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 20px;
-  padding: 1.8rem;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.grid-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--card-theme-color);
-  opacity: 0.8;
-  transition: width 0.3s ease;
-}
-
-.grid-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12px 30px -10px var(--card-glow-color);
-}
-
-.grid-card:hover::before {
-  width: 6px;
-}
-
-.card-icon-container {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card-icon-bg);
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
-  color: var(--card-theme-color);
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.grid-card:hover .card-icon-container {
-  transform: scale(1.1) rotate(5deg);
-}
-
 .tech-tag {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -146,13 +85,13 @@
   align-items: center;
   gap: 6px;
   color: var(--card-theme-color);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: gap 0.3s ease, opacity 0.3s ease;
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: 0.75rem; /* reduced for compact cards */
   cursor: pointer;
 }
 
@@ -423,20 +362,6 @@
   transition: stroke-width 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
 }
 
-/* Kill/reset animation on all cards by default when grid container is hovered */
-.project-grid:hover .border-trail-rect {
-  animation: none;
-  opacity: 0.3;
-}
-
-/* Apply fast running animation only to the hovered card */
-.project-grid .grid-card:hover .border-trail-rect {
-  animation: borderRun 2.2s linear infinite;
-  stroke-width: 2.5px;
-  opacity: 1;
-  filter: drop-shadow(0 0 8px var(--card-theme-color));
-}
-
 @keyframes borderRun {
   from {
     stroke-dashoffset: 100;
@@ -566,7 +491,8 @@
   }
 }
 
-/* Scaling down for smaller viewports so the 3+2 layout stays side-by-side without overflowing */
+
+/* === Honeycomb 3+2 Responsive Scaling === */
 @media (max-width: 1000px) {
   .hex-grid-container {
     transform: scale(0.85);

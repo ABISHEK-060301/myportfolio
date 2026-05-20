@@ -10,7 +10,7 @@ import {
   FaUsers,
   FaWallet
 } from "react-icons/fa";
-import { FiGrid, FiList } from "react-icons/fi";
+import { FiList } from "react-icons/fi";
 import { TbHexagon } from "react-icons/tb";
 
 import "./projects.css";
@@ -140,7 +140,7 @@ const projectsData = [
 ];
 
 const Projects = () => {
-  const [activeLayout, setActiveLayout] = useState("grid"); // "grid", "list", "hex"
+  const [activeLayout, setActiveLayout] = useState("list"); // "list", "hex"
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
@@ -183,14 +183,6 @@ const Projects = () => {
           {/* Interactive Layout Switcher */}
           <div className="view-switcher">
             <button
-              onClick={() => setActiveLayout("grid")}
-              className={`view-btn ${activeLayout === "grid" ? "active" : ""}`}
-              title="Grid View"
-            >
-              <FiGrid />
-              <span className="hidden md:inline">Grid</span>
-            </button>
-            <button
               onClick={() => setActiveLayout("list")}
               className={`view-btn ${activeLayout === "list" ? "active" : ""}`}
               title="Timeline List View"
@@ -215,89 +207,6 @@ const Projects = () => {
 
       {/* Main Content Area */}
       <AnimatePresence mode="wait">
-        {activeLayout === "grid" && (
-          <motion.div
-            key="grid-view"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.4 }}
-            className="project-grid"
-          >
-            {projectsData.map((project) => {
-              const IconComp = project.icon;
-              return (
-                <div
-                  key={project.id}
-                  className="grid-card"
-                  style={{
-                    "--card-theme-color": project.color,
-                    "--card-glow-color": project.glowColor,
-                    "--card-icon-bg": project.iconBg
-                  }}
-                >
-                  {/* Glowing Border Trail Overlay */}
-                  <svg className="border-trail-svg">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="100%"
-                      height="100%"
-                      rx="19"
-                      className="border-trail-rect"
-                      pathLength="100"
-                    />
-                  </svg>
-
-                  {/* Decorative Subtle Background Tech Logo */}
-                  <img
-                    src={project.bgLogo}
-                    alt="tech background"
-                    className="card-bg-logo"
-                  />
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="card-icon-container">
-                      <IconComp />
-                    </div>
-                    <span className="text-xs font-mono text-neutral-400 bg-white/5 border border-white/5 px-2.5 py-1 rounded-md">
-                      Client: {project.client}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-bold mb-2 text-white font-sans group-hover:text-white transition duration-300">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-neutral-400 text-sm leading-relaxed mb-6 font-light">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.slice(0, 4).map((tech, idx) => (
-                      <span key={idx} className="tech-tag">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className="tech-tag bg-white/5 text-neutral-400">
-                        +{project.technologies.length - 4} more
-                      </span>
-                    )}
-                  </div>
-
-                  <div
-                    onClick={() => setSelectedProject(project)}
-                    className="detail-link"
-                  >
-                    <span>View Details</span>
-                    <FaArrowRight />
-                  </div>
-                </div>
-              );
-            })}
-          </motion.div>
-        )}
 
         {activeLayout === "list" && (
           <motion.div

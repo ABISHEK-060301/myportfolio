@@ -79,7 +79,10 @@ function App() {
           <Row className="z-[2] relative">
             <Col xs={24}>
               {activeTab === HOME ? (
-                <Home />
+                <Home
+                  joinedYear={joinedYear}
+                  currentMonth={currentMonth}
+                  currentYear={currentYear} />
               ) : activeTab === ABOUT ? (
                 <About exp={exp} />
               ) : activeTab === EXPERIENCE ? (

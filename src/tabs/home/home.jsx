@@ -4,15 +4,30 @@ import Car from "../../component/car/car";
 import Orb from "../../jsrepo/Backgrounds/Orb/Orb";
 import RotatingText from "../../jsrepo/TextAnimations/RotatingText/RotatingText";
 
-const Home = () => {
+const Home = ({ joinedYear, currentYear, currentMonth }) => {
+  console.log("joinedYear", joinedYear);
+
+  const monthsWorkedIn2022 = 3;
+  let totalMonths = 0;
+  for (let i = joinedYear; i <= currentYear; i++) {
+    if (i === 2022) {
+      totalMonths += monthsWorkedIn2022;
+    } else if (i === currentYear) {
+      totalMonths += currentMonth;
+    } else {
+      totalMonths += 12;
+    }
+  }
+  const experienceYears = (totalMonths / 12).toFixed(1) + "+";
+
   const cards = [
     {
       label: "Years of Experience",
-      content: "3+",
+      content: experienceYears,
     },
     {
       label: "Projects",
-      content: "4+",
+      content: "5+",
     },
   ];
 
@@ -112,7 +127,7 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="card__subtitle bebas tracking-wider">
-                          Associate Software Engineer
+                          Software Engineer
                         </div>
                         <div className="flex justify-between">
                           <div className="card__wrapper ">

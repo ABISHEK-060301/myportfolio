@@ -375,7 +375,7 @@ body::-webkit-scrollbar {
 }
 
 .gradient-border:after {
-  content: url('./assets/abi.png');
+  content: "";
   position: absolute;
   top: -20px;
   left: -20px;

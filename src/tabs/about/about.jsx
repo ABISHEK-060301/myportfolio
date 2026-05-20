@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Box, Container, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import { BlurRevealEffect } from "../../jsrepo/TextAnimations/blurRevealText/BlurRevealText";
+import { BlurRevealEffect } from "../../jsrepo/TextAnimations/BlurRevealText/BlurRevealText";
 import { TextHoverEffect } from "../../jsrepo/TextAnimations/TextHoverEffect/TextHoverEffect";
 
 const About = ({ exp }) => {

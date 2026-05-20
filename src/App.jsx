@@ -8,10 +8,11 @@ import Contact from "./tabs/contact/contact";
 import Experience from "./tabs/experience/experience";
 import Home from "./tabs/home/home";
 import Stacks from "./tabs/stacks/stacks";
+import Projects from "./tabs/projects/projects";
 
 import Watch from "./component/watch/watch";
 import ClickSpark from "./jsrepo/Animations/ClickSpark/ClickSpark";
-import { ABOUT, CONTACT, EXPERIENCE, HOME, STACKS } from "./utils";
+import { ABOUT, CONTACT, EXPERIENCE, HOME, PROJECTS, STACKS } from "./utils";
 
 function App() {
   const [activeTab, setActiveTab] = useState(localStorage.getItem("activeTab"));
@@ -68,14 +69,17 @@ function App() {
           <AnimatedBackground />
         </div>
 
-        <div className="absolute z-[2] top-0 left-0 w-full h-full">
-          <div className="relative">
-            <img
-              className="absolute left-1 top-0 pointer logo"
-              src={logo}
-              width={"150vw"}
-            />
-          </div>
+        {/* Fixed Logo in the top-left corner */}
+        <div className="absolute z-[10] top-0 left-1 pointer logo">
+          <img
+            src={logo}
+            width={"150vw"}
+            className="pointer logo"
+            alt="Logo"
+          />
+        </div>
+
+        <div className="absolute z-[2] top-0 left-0 w-full h-full overflow-y-auto scrollable-content pb-24">
           <Row className="z-[2] relative">
             <Col xs={24}>
               {activeTab === HOME ? (
@@ -91,6 +95,8 @@ function App() {
                   currentMonth={currentMonth}
                   currentYear={currentYear}
                 />
+              ) : activeTab === PROJECTS ? (
+                <Projects />
               ) : activeTab === STACKS ? (
                 <Stacks />
               ) : activeTab === CONTACT ? (

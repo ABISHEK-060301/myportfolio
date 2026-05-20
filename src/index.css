@@ -2408,3 +2408,22 @@ body::-webkit-scrollbar {
     inset -8px -8px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(145deg, #e0ffff, #ffffff);
 }
+
+/* Custom Scrollbar for scrollable panels */
+.scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.scrollable-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}

@@ -28,6 +28,7 @@ import typescript from "../assets/stack_logo/typescript.png";
 // Tabs
 export const HOME = "home";
 export const ABOUT = "about";
+export const PROJECTS = "projects";
 export const EXPERIENCE = "experience";
 export const STACKS = "stacks";
 export const CONTACT = "contact";

@@ -1,0 +1,624 @@
+/* Projects CSS - Premium Custom Styles */
+
+/* Base Transitions & Interactive States */
+.projects-container {
+  min-height: 80vh;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+}
+
+/* View Switcher Tabs */
+.view-switcher {
+  display: inline-flex;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-btn:hover {
+  color: #ffffff;
+}
+
+.view-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* --- Layout 01: Grid Cards --- */
+.project-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.grid-card {
+  position: relative;
+  background: rgba(15, 15, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.8rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--card-theme-color);
+  opacity: 0.8;
+  transition: width 0.3s ease;
+}
+
+.grid-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px -10px var(--card-glow-color);
+}
+
+.grid-card:hover::before {
+  width: 6px;
+}
+
+.card-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-icon-bg);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  color: var(--card-theme-color);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.grid-card:hover .card-icon-container {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--card-theme-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: gap 0.3s ease, opacity 0.3s ease;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  cursor: pointer;
+}
+
+.detail-link:hover {
+  gap: 10px;
+  opacity: 0.9;
+}
+
+/* --- Layout 02: Timeline List --- */
+.timeline-wrapper {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-top: 2rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(-2.5rem + 4px);
+  top: 24px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #111111;
+  border: 3px solid var(--card-theme-color);
+  box-shadow: 0 0 10px var(--card-glow-color);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 16px var(--card-theme-color);
+}
+
+.list-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(15, 15, 15, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.list-card:hover {
+  background: rgba(20, 20, 20, 0.6);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(8px);
+  box-shadow: 0 4px 20px -5px var(--card-glow-color);
+}
+
+.circle-arrow-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.list-card:hover .circle-arrow-btn {
+  background: var(--card-theme-color);
+  color: #000000;
+  border-color: var(--card-theme-color);
+  transform: rotate(-45deg) scale(1.1);
+  box-shadow: 0 0 15px var(--card-glow-color);
+}
+
+/* --- Layout 03: Hexagonal Flow (Honeycomb Grid) --- */
+.hexagon-flow-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 0 2.5rem 0;
+  min-height: auto;
+  overflow: visible;
+}
+
+.hex-grid-container {
+  position: relative;
+  width: 910px;   /* 290*3 + 20*2 = 910px (20px gap between each) */
+  height: 590px;  /* 330 + 250 + padding for row 2 bottom */
+  margin: 0 auto;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hexagon-wrapper {
+  position: absolute;
+  /* Base is absolute on desktop to allow side-by-side interlocking */
+  width: 290px;
+  height: 330px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.4s ease;
+  z-index: 1;
+}
+
+/* Row 1: 3 hexagons with 20px equal gap between each */
+.hex-wrapper-1 {
+  left: 0;
+  top: 0;
+}
+
+.hex-wrapper-2 {
+  left: 310px;  /* 290 + 20 */
+  top: 0;
+}
+
+.hex-wrapper-3 {
+  left: 620px;  /* 290*2 + 20*2 */
+  top: 0;
+}
+
+/* Row 2: 2 hexagons centered under row 1 gaps */
+/* Center of gap between hex-1 & hex-2: (290 + 310) / 2 = 300 → left = 300 - 145 = 155 */
+.hex-wrapper-4 {
+  left: 155px;
+  top: 250px;   /* vertical stride = 250px (≈ 20px side-gap equivalent) */
+}
+
+/* Center of gap between hex-2 & hex-3: 310 + (290 + 310) / 2 = 610 → left = 610 - 145 = 465 */
+.hex-wrapper-5 {
+  left: 465px;
+  top: 250px;
+}
+
+.hexagon-wrapper:hover {
+  transform: scale(1.08) translateY(-5px);
+  z-index: 10;
+}
+
+.hex-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hex-polygon-bg {
+  fill: rgba(12, 12, 12, 0.55);
+  /* reduced opacity so bg logo shines through */
+  transition: fill 0.3s ease;
+}
+
+.hex-polygon-border {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1.5px;
+  transition: stroke-width 0.3s ease, stroke 0.3s ease;
+}
+
+.hexagon-wrapper:hover .hex-polygon-border {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 2px;
+}
+
+.hexagon-wrapper:hover .hex-polygon-bg {
+  fill: rgba(20, 20, 20, 0.65);
+}
+
+.hex-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+  pointer-events: auto;
+  z-index: 3;
+  /* always above the bg logo watermark */
+}
+
+.hex-icon-box {
+  color: var(--card-theme-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 6px var(--card-glow-color));
+  transition: transform 0.3s ease;
+}
+
+.hexagon-wrapper:hover .hex-icon-box {
+  transform: scale(1.15) translateY(-2px);
+}
+
+/* Floating Animations for Stack Logos */
+@keyframes floatLogo {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+.floating-logo {
+  animation: floatLogo 4s ease-in-out infinite;
+  display: inline-flex;
+  transition: filter 0.3s ease;
+}
+
+.floating-logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* --- Glowing Running Border Trails (Same for All Cards) --- */
+.border-trail-svg {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  pointer-events: none;
+  border-radius: 19px;
+  z-index: 1;
+}
+
+.border-trail-rect {
+  width: 100%;
+  height: 100%;
+  rx: 19px;
+  fill: none;
+  stroke: var(--card-theme-color);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-dasharray: 4 46;
+  animation: borderRun 10s linear infinite;
+  /* minimized speed when not hovered */
+  opacity: 0.6;
+  filter: drop-shadow(0 0 3px var(--card-theme-color));
+  transition: stroke-width 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Kill/reset animation on all cards by default when grid container is hovered */
+.project-grid:hover .border-trail-rect {
+  animation: none;
+  opacity: 0.3;
+}
+
+/* Apply fast running animation only to the hovered card */
+.project-grid .grid-card:hover .border-trail-rect {
+  animation: borderRun 2.2s linear infinite;
+  stroke-width: 2.5px;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--card-theme-color));
+}
+
+@keyframes borderRun {
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --- Timeline List Reset States --- */
+.timeline-wrapper:hover .border-trail-rect {
+  animation: none;
+  opacity: 0.3;
+}
+
+.timeline-wrapper .list-card:hover .border-trail-rect {
+  animation: borderRun 2.2s linear infinite;
+  stroke-width: 2.5px;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--card-theme-color));
+}
+
+/* --- Hexagonal Honeycomb Border Trail --- */
+.hex-polygon-trail {
+  fill: none;
+  stroke: var(--card-theme-color);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 4 46;
+  animation: borderRun 10s linear infinite;
+  /* minimized speed when not hovered */
+  pointer-events: none;
+  opacity: 0.6;
+  transition: stroke-width 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Reset hexagonal trails when honeycomb grid is hovered */
+.hex-grid-container:hover .hex-polygon-trail {
+  animation: none;
+  opacity: 0.3;
+}
+
+.hex-grid-container .hexagon-wrapper:hover .hex-polygon-trail {
+  animation: borderRun 2.2s linear infinite;
+  stroke-width: 3.5px;
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--card-theme-color));
+}
+
+/* --- Brighter Tech Stack Card Background Logos (No Clipping) --- */
+.card-bg-logo {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 5.5rem;
+  /* slightly smaller size to fit perfectly inside the card corner */
+  height: 5.5rem;
+  opacity: 0.16;
+  /* highly visible, premium bright look */
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 0;
+  filter: brightness(1.25) contrast(1.15);
+}
+
+.list-card-bg-logo {
+  right: 18%;
+  /* Positioned dynamically centered horizontally/vertically */
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: 7.5rem;
+  height: 7.5rem;
+  opacity: 0.13;
+}
+
+.hex-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7rem;
+  height: 7rem;
+  opacity: 0.22;
+  /* clipped to hexagon shape so it stays inside the comb */
+  clip-path: polygon(50% 1.5%, 98.3% 25.8%, 98.3% 74.2%, 50% 98.5%, 1.7% 74.2%, 1.7% 25.8%);
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 2;
+  /* above the SVG polygon so it's visible through the lighter bg */
+  filter: brightness(1.4) contrast(1.2) saturate(1.1);
+}
+
+.grid-card:hover .card-bg-logo {
+  opacity: 0.32;
+  transform: scale(1.15) rotate(-12deg);
+}
+
+.list-card:hover .list-card-bg-logo {
+  opacity: 0.28;
+  transform: translateY(-50%) scale(1.18) rotate(-8deg);
+  /* preserves the vertical centering transform */
+}
+
+.hexagon-wrapper:hover .hex-bg-logo {
+  opacity: 0.35;
+  transform: translate(-50%, -50%) scale(1.14) rotate(8deg);
+  filter: brightness(1.6) contrast(1.3) saturate(1.2);
+}
+
+/* Media Queries for Responsive Views */
+@media (max-width: 900px) {
+  .list-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .circle-arrow-btn {
+    align-self: flex-end;
+  }
+}
+
+/* Scaling down for smaller viewports so the 3+2 layout stays side-by-side without overflowing */
+@media (max-width: 1000px) {
+  .hex-grid-container {
+    transform: scale(0.85);
+    transform-origin: center top;
+    margin-bottom: -80px;
+  }
+}
+
+@media (max-width: 840px) {
+  .hex-grid-container {
+    transform: scale(0.7);
+    transform-origin: center top;
+    margin-bottom: -160px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hex-grid-container {
+    transform: scale(0.55);
+    transform-origin: center top;
+    margin-bottom: -240px;
+  }
+}
+
+/* Collapse to vertical stack only on mobile screens (width < 550px) */
+@media (max-width: 550px) {
+  .hexagon-flow-container {
+    padding: 1.5rem 0;
+    min-height: auto;
+  }
+
+  .hex-grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    height: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .hex-wrapper-1,
+  .hex-wrapper-2,
+  .hex-wrapper-3,
+  .hex-wrapper-4,
+  .hex-wrapper-5 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 auto;
+    width: 290px;
+    height: 330px;
+  }
+}
